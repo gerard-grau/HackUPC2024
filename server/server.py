@@ -6,13 +6,13 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 UPLOAD_FOLDER = os.path.dirname(os.path.realpath(__file__))  # Specify the destination folder
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER + "/static/"
 
 @app.route('/upload_photo')
 def index():
     return render_template('upload_photo.html')
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('home.html')
 
@@ -27,6 +27,7 @@ def upload_photo():
     if photo:
         # Save the uploaded file to the destination folder
         filename = secure_filename(photo.filename)
+        photo.filename = "image_to_predict"
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], photo.filename))
         return render_template('display_photo.html')
     return 'Error uploading photo.'

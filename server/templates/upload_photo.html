@@ -1,5 +1,4 @@
 <!-- upload_photo.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +9,50 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        
-        h1 {
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
             text-align: center;
         }
-        
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
         form {
             max-width: 400px;
             margin: 0 auto;
         }
-        
         label {
             display: block;
             margin-top: 10px;
         }
-        
         input[type="file"] {
             margin-top: 5px;
         }
-        
         button[type="submit"] {
             margin-top: 10px;
             padding: 10px 20px;
@@ -39,32 +61,23 @@
             border: none;
             cursor: pointer;
         }
-        
         button[type="submit"]:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h1>Upload Photo</h1>
+    <header>
+        <h1>Upload Photo</h1>
+    </header>
     <form action="{{ url_for('upload_photo') }}" method="POST" enctype="multipart/form-data">
         <label for="photo">Photo:</label>
         <input type="file" name="photo" id="photo" accept="image/*" capture="environment">
-        <br> <!-- Add a line break here -->
-        <!-- <label for="type">Type:</label>
-        <select name = "type" id ="type">
-            <option value=""></option>
-            <option value="Men">Men</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
-        </select> -->
-        <!-- <label for="season">Season:</label>
-        <select name="season" id="season">
-            <option value=""></option>
-            <option value="Summer">Summer</option>
-            <option value="Winter">Winter</option>
-        <select > -->
+        <br>
         <button type="submit">Upload</button>
     </form>
+    <footer>
+        &copy; 2024 Your Website. All rights reserved.
+    </footer>
 </body>
 </html>
