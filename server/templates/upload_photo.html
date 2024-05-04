@@ -1,0 +1,58 @@
+<!-- upload_photo.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input[type="file"] {
+            margin-top: 5px;
+        }
+        
+        button[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Photo</h1>
+    <form action="{{ url_for('upload_photo') }}" method="POST" enctype="multipart/form-data">
+        <label for="photo">Photo:</label>
+        <input type="file" name="photo" id="photo" accept="image/*" capture="environment">
+        <label for="gallery_photo">Gallery Photo:</label>
+        <input type="file" name="gallery_photo" id="gallery_photo" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
