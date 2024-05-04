@@ -8,13 +8,13 @@ app = Flask(__name__)
 UPLOAD_FOLDER = os.path.dirname(os.path.realpath(__file__))  # Specify the destination folder
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/')
+@app.route('/upload_photo')
 def index():
     return render_template('upload_photo.html')
 
-@app.route('/display_photo/<filename>')
-def display_photo(filename):
-    return render_template('display_photo.html', filename=filename)
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_photo():
@@ -28,7 +28,7 @@ def upload_photo():
         # Save the uploaded file to the destination folder
         filename = secure_filename(photo.filename)
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], photo.filename))
-        return redirect(url_for('display_photo', filename=filename))
+        return render_template('display_photo.html')
     return 'Error uploading photo.'
 
 if __name__ == "__main__":
