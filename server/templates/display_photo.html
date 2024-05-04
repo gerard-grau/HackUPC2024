@@ -1,59 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo uploaded successfully!</title>
-    <style>
-        /* CSS styles can go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Layout</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.product-intro, .similar-products {
+    margin: 20px;
+    padding: 10px;
+}
+
+.image-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: inline-block;
+    margin: 10px;
+}
+
+.large {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 0 auto; /* Centers the large image placeholder */
+}
+
+.product-grid {
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .product-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+</style>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Website</h1>
+        <h1>Clothing predictor</h1>
     </header>
-    <main>
-        <h2>Welcome to our website!</h2>
-        <p>This is the main content area where you can put your text, images, and other content.</p>
-    </main>
-    <footer>
-        &copy; 2024 Your Website. All rights reserved.
-    </footer>
+    <section class="product-intro">
+        <h2>Article introduced:</h2>
+        <div class="image-placeholder large">
+            <img src="{{ url_for('static', filename='a.jpg') }}" alt="Image">
+        </div>
+        </section>
+    <section class="similar-products">
+        <h3>Similar good options based on your article:</h3>
+        <div class="product-grid">
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
+        </div>
+    </section>
 </body>
 </html>

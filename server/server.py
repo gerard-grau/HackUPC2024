@@ -16,7 +16,7 @@ def index():
 def home():
     return render_template('home.html')
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/results_picture', methods=['GET', 'POST'])
 def upload_photo():
     file_key = 'photo' if 'photo' in request.files else 'gallery_photo'
     if file_key not in request.files:
