@@ -50,8 +50,7 @@
     <form action="{{ url_for('upload_photo') }}" method="POST" enctype="multipart/form-data">
         <label for="photo">Photo:</label>
         <input type="file" name="photo" id="photo" accept="image/*" capture="environment">
-        <label for="gallery_photo">Gallery Photo:</label>
-        <input type="file" name="gallery_photo" id="gallery_photo" accept="image/*">
+        <br> <!-- Add a line break here -->
         <button type="submit">Upload</button>
     </form>
 </body>
