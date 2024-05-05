@@ -36,6 +36,10 @@ def upload_photo():
         return render_template('display_photo.html')
     return 'Error uploading photo.'
 
+@app.route('/display_photo')
+def display_photo():
+    return render_template('display_photo.html')
+
 
 @app.route('/search', methods=['POST'])
 def search():
