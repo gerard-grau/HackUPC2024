@@ -226,7 +226,7 @@ model, preprocess = clip.load('ViT-B/32', device=device)
 with open('/home/guimcc/OneDrive/General/Projectes/HackUPC2024/ckp/encoder.pkl', 'rb') as f:
     loaded_encoder = pickle.load(f)
     
-h5pt_file_path = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/ckp/images_30k.h5'
+h5pt_file_path = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/ckp/images_30k_clean.h5'
 h5f = h5py.File(h5pt_file_path, 'r')
 train_embeddings = h5f['image_embeddings'][:]
 

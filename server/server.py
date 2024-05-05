@@ -45,6 +45,9 @@ def upload_photo():
         return render_template('display_photo.html')
     return 'Error uploading photo.'
 
+@app.route('/display_photo')
+def display_photo():
+    return render_template('display_photo.html')
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -53,8 +56,6 @@ def search():
     save_images_from_product(article_path)
 
     return render_template('nearest_clothes.html')
-
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
