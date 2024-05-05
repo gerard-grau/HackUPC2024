@@ -40,7 +40,7 @@ def upload_photo():
 @app.route('/search', methods=['POST'])
 def search():
     article_path = request.form['article-name']
-
+    
     save_images_from_product(article_path)
 
     return render_template('nearest_clothes.html')

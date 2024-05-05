@@ -34,7 +34,7 @@
         }
         
         .product-intro, .similar-products {
-            margin: 20px;
+            margin: 0px;
             padding: 10px;
             text-align: center;
             display: flex;
@@ -72,13 +72,13 @@
         <h1>Search for article out of stock</h1>
     </header>
     <section class="product-intro">
-        <form action="/search" method="post">
-            <h2>Introduce article name:</h2>
+        <form id="/searchform" action="/search" method="post">
+            <h2 style="display: inline-block; margin-right: 20px;">Introduce article name:  </h2>
             <input type="text" name="article-name" placeholder="Enter article name">
-            <input type="submit" value="Search">
+            <input id="submit-button" type="submit" value="Search">
         </form>
         <p></p>
-        <div class="image-placeholder large" style="width: 4000px; height: 200px;">
+        <div class="image-placeholder large" style="width: 400px; height: 250px;">
             <img src="static/product_search.jpg" alt="product_search.jpg" style="width: auto; height: 100%;">
         </div>
         </div>
@@ -86,20 +86,20 @@
 
     <section class="similar-products">
         <h3>Most similar options based on your article:</h3>
-        <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
-            <div class="image-placeholder" style="width: 200px; height: 200px;">
+        <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center; margin-bottom: 50px;">
+            <div class="image-placeholder" style="width: 200px; height: 250px;">
                 <img src="static/search_result_1.jpg" alt="search_result_1.jpg" style="width: auto; height: 100%;">
                 <p>Best result</p>
             </div>
-            <div class="image-placeholder" style="width: 200px; height: 200px;">
+            <div class="image-placeholder" style="width: 200px; height: 250px;">
                 <img src="static/search_result_2.jpg" alt="search_result_2.jpg" style="width: auto; height: 100%;">
                 <p>2nd result</p>
             </div>
-            <div class="image-placeholder" style="width: 200px; height: 200px;">
+            <div class="image-placeholder" style="width: 200px; height: 250px;">
                 <img src="static/search_result_3.jpg" alt="search_result_3.jpg" style="width: auto; height: 100%;">
                 <p>3rd result</p>
             </div>
-            <div class="image-placeholder" style="width: 200px; height: 200px;">
+            <div class="image-placeholder" style="width: 200px; height: 250px;">
                 <img src="static/search_result_4.jpg" alt="search_result_4.jpg" style="width: auto; height: 100%;">
                 <p>4th result</p>
             </div>
