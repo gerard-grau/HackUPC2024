@@ -230,7 +230,7 @@ h5pt_file_path = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/ckp/images
 h5f = h5py.File(h5pt_file_path, 'r')
 train_embeddings = h5f['image_embeddings'][:]
 
-images = pd.read_csv('/home/guimcc/OneDrive/General/Projectes/HackUPC2024/index/images_resized_30k.csv')
+images = pd.read_csv('/home/guimcc/OneDrive/General/Projectes/HackUPC2024/index/images_resized_30k_clean.csv')
 links = pd.read_csv('/home/guimcc/OneDrive/General/Projectes/HackUPC2024/inditextech_hackupc_challenge_images.csv')
 
 image_path_to_segment = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/images_to_inference/input'
