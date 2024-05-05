@@ -2,7 +2,7 @@ from werkzeug.utils import secure_filename
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from out_of_stock import save_images_from_product
-# from create_outfit import create_outfit
+from create_outfit import create_outfit
 
 app = Flask(__name__)
 

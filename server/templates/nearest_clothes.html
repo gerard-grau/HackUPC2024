@@ -23,6 +23,19 @@
             text-align: center;
             width: 100%;
         }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         
         header h1 {
             color: #fff;
@@ -77,6 +90,12 @@
     <header>
         <h1>Search for article out of stock</h1>
     </header>
+    <nav>
+        <a href="upload_photo">Find similar clothes</a>
+        <a href="display_photo">Display picture</a>
+        <a href="nearest_clothes">Search clothes</a>
+        <a href="examples">Example gallery</a>
+    </nav>
     <section class="product-intro">
         <form id="/searchform" action="/search" method="post">
             <h2 style="display: inline-block; margin-right: 20px;">Introduce article name:  </h2>
