@@ -1,7 +1,7 @@
 from werkzeug.utils import secure_filename
 import os
 from flask import Flask, render_template, request, redirect, url_for
-# from search_functions import show_product_neighbours
+from out_of_stock import save_images_from_product
 
 app = Flask(__name__)
 
@@ -40,8 +40,9 @@ def upload_photo():
 @app.route('/search', methods=['POST'])
 def search():
     article_path = request.form['article-name']
-    # call python function using article_path
-    # store the image in the static/images folder
+
+    save_images_from_product(article_path)
+
     return render_template('nearest_clothes.html')
 
 
