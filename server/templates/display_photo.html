@@ -78,6 +78,18 @@ button {
         <h3>Masks from clothes</h3>
         <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
             <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="{{ url_for('static', filename='s_c_1.jpg') }}" alt="search_result_1.jpg" style="width: 100%; height: 100%">
+            </div>
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="{{ url_for('static', filename='s_c_1.jpg') }}" alt="search_result_2.jpg" style="width: 100%; height: 100%">
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="similar-products">
+        <h3>Similar good options based on your outfit</h3>
+        <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
             <img src="{{ url_for('static', filename='0_0.jpg') }}" alt="search_result_1.jpg" style="width: 100%; height: 100%">
             </div>
             <div class="image-placeholder" style="width: 150px; height: 150px;">
@@ -87,10 +99,6 @@ button {
             <img src="{{ url_for('static', filename='0_2.jpg') }}" alt="search_result_3.jpg" style="width: 100%; height: 100%">
             </div>
         </div>
-        </div>
-    </section>
-    <section class="similar-products">
-        <h3>Similar good options based on your outfit</h3>
         <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
             <div class="image-placeholder" style="width: 150px; height: 150px;">
             <img src="{{ url_for('static', filename='1_0.jpg') }}" alt="search_result_1.jpg" style="width: 100%; height: 100%">
@@ -102,24 +110,13 @@ button {
             <img src="{{ url_for('static', filename='1_2.jpg') }}" alt="search_result_3.jpg" style="width: 100%; height: 100%">
             </div>
         </div>
-        <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
-            <div class="image-placeholder" style="width: 150px; height: 150px;">
-            <img src="{{ url_for('static', filename='2_0.jpg') }}" alt="search_result_1.jpg" style="width: 100%; height: 100%">
-            </div>
-            <div class="image-placeholder" style="width: 150px; height: 150px;">
-            <img src="{{ url_for('static', filename='2_1.jpg') }}" alt="search_result_2.jpg" style="width: 100%; height: 100%">
-            </div>
-            <div class="image-placeholder" style="width: 150px; height: 150px;">
-            <img src="{{ url_for('static', filename='2_2.jpg') }}" alt="search_result_3.jpg" style="width: 100%; height: 100%">
-            </div>
-        </div>
         </div>
     </section>
-    <form action="{{ url_for('home') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url_for('home') }}" method="GET" enctype="multipart/form-data">
         <button type="submit">Go home</button>
     </form>
     <footer>
-        &copy; 2024 Clothing predictor. All rights reserved.
+        Dress as you see.
     <script>
     function checkImages() {
         var img1 = new Image();

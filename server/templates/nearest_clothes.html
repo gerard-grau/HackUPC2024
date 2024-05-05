@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for an article out of stock</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        header h1 {
+            color: #fff;
+        }
+        
+        h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .product-intro, .similar-products {
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        </style>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Search for article out of stock</h1>
+    </header>
+    <section class="product-intro">
+        <form action="/search" method="post">
+            <h2>Introduce article name:</h2>
+            <input type="text" name="article-name" placeholder="Enter article name">
+            <input type="submit" value="Search">
+        </form>
+        <p></p>
+        <div class="image-placeholder large" style="width: 200; height: 150;">
+            <img src="static/product_search.jpg" alt="product_search.jpg" style="width: 100%; height: 100%;">
+        </div>
+        </div>
+    </section>
+
+    <section class="similar-products">
+        <h3>Similar good options based on your article:</h3>
+        <div class="product-grid" style="width: 1000px; height: 200px; display: flex; justify-content: center;">
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="static/search_result_1.jpg" alt="search_result_1.jpg" style="width: 100%; height: 100%">
+            <p>Best result</p>
+            </div>
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="static/search_result_2.jpg" alt="search_result_2.jpg" style="width: 100%; height: 100%">
+            <p>2nd result</p>
+            </div>
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="static/search_result_3.jpg" alt="search_result_3.jpg" style="width: 100%; height: 100%">
+            <p>3rd result</p>
+            </div>
+            <div class="image-placeholder" style="width: 150px; height: 150px;">
+            <img src="static/search_result_4.jpg" alt="search_result_4.jpg" style="width: 100%; height: 100%">
+            <p>4th result</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <form action="{{ url_for('home') }}" method="GET" enctype="multipart/form-data">
+        <button type="submit">Go home</button>
+    </form>
+    <footer>
+        Dress as you see.
+    </footer>
+</body>
+
+</html>
