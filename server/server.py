@@ -2,6 +2,7 @@ from werkzeug.utils import secure_filename
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from out_of_stock import save_images_from_product
+from create_outfit import create_outfit
 
 app = Flask(__name__)
 
@@ -31,8 +32,11 @@ def upload_photo():
     if photo:
         # Save the uploaded file to the destination folder
         filename = secure_filename(photo.filename)
-        photo.filename = "image_to_predict"
+        photo.filename = "image_to_predict.jpeg"
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], photo.filename))
+        
+        create_outfit()
+        
         return render_template('display_photo.html')
     return 'Error uploading photo.'
 
