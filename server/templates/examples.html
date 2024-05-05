@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            color: #fff;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        .product-intro,
+        .similar-products {
+            margin: 0px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Example gallery</h1>
+    </header>
+        <div class="column">
+            <img src="static/output20.png" alt="Image 20">
+        </div>
+        <div class="column">
+            <img src="static/output12.png" alt="Image 9">
+        </div>
+        <div class="column">
+            <img src="static/output5.png" alt="Image 4">
+        </div>
+        <div class="column">
+            <img src="static/output.png" alt="Image 1">
+        </div>
+        <div class="column">
+            <img src="static/output16.png" alt="Image 13">
+        </div>
+        <div class="column">
+            <img src="static/output14.png" alt="Image 11">
+        </div>
+        <div class="column">
+            <img src="static/output1.png" alt="Image 2">
+        </div>
+        <div class="column"></div>
+            <img src="static/output3.png" alt="Image 3">
+        </div>
+        <div class="column">
+            <img src="static/output6.png" alt="Image 5">
+        </div>
+        <div class="column">
+            <img src="static/output7.png" alt="Image 6">
+        </div>
+        <div class="column">
+            <img src="static/output8.png" alt="Image 7">
+        </div>
+        <div class="column">
+            <img src="static/output10.png" alt="Image 8">
+        </div>
+        <div class="column">
+            <img src="static/output13.png" alt="Image 10">
+        </div>
+        <div class="column">
+            <img src="static/output15.png" alt="Image 12">
+        </div>
+
+    </div>
+    <form action="{{ url_for('home') }}" method="GET" enctype="multipart/form-data">
+        <button type="submit">Menu</button>
+    </form>
+    <footer>
+        Dress as you see.
+    </footer>
+    <img src="static/logo.png" alt="Logo" class="logo" style="width: 300px; height: auto;">
+</body>
+
+</html>

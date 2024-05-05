@@ -2,7 +2,7 @@ from werkzeug.utils import secure_filename
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from out_of_stock import save_images_from_product
-from create_outfit import create_outfit
+# from create_outfit import create_outfit
 
 app = Flask(__name__)
 
@@ -20,6 +20,11 @@ def home():
 @app.route('/nearest_clothes')
 def nearest_clothes():
     return render_template('nearest_clothes.html')
+
+@app.route('/examples')
+def examples():
+    return render_template('examples.html')
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_photo():
