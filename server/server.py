@@ -1,7 +1,8 @@
 from werkzeug.utils import secure_filename
 import os
 from flask import Flask, render_template, request, redirect, url_for
-# from search_functions import show_product_neighbours
+from out_of_stock import save_images_from_product
+from create_outfit import create_outfit
 
 app = Flask(__name__)
 
@@ -31,8 +32,11 @@ def upload_photo():
     if photo:
         # Save the uploaded file to the destination folder
         filename = secure_filename(photo.filename)
-        photo.filename = "image_to_predict"
+        photo.filename = "image_to_predict.jpeg"
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], photo.filename))
+        
+        create_outfit()
+        
         return render_template('display_photo.html')
     return 'Error uploading photo.'
 
@@ -40,15 +44,13 @@ def upload_photo():
 def display_photo():
     return render_template('display_photo.html')
 
-
 @app.route('/search', methods=['POST'])
 def search():
     article_path = request.form['article-name']
-    # call python function using article_path
-    # store the image in the static/images folder
+    
+    save_images_from_product(article_path)
+
     return render_template('nearest_clothes.html')
-
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
