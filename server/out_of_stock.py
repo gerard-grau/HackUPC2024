@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import h5py
 from scipy.spatial.distance import cosine
-import matplotlib.pyplot as plt
 import requests
 from PIL import Image
 import io
@@ -76,8 +75,10 @@ def get_nearest_products(path, num_options=3):
 def save_images_from_product(product):
     for i, path in enumerate([product] + get_nearest_products(product, 4)):
             image = get_image(path)
-            filename = 'product_search.jpg' if i == 0 else f'search_result{i}.jpg'
+            filename = 'server/static/product_search.jpg' if i == 0 else f'server/static/search_result_{i}.jpg'
             image.save(filename)
+            print(f"Saved {filename}")
+
 
 if __name__ == "__main__":
     save_images_from_product('16304_2_2024_V_0_1')
