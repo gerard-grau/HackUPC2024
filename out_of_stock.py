@@ -76,7 +76,8 @@ def get_nearest_products(path, num_options=3):
 def save_images_from_product(product):
     for i, path in enumerate([product] + get_nearest_products(product, 4)):
             image = get_image(path)
-            image.save(f'server/static/search_{i}.jpg')
+            filename = 'product_search.jpg' if i == 0 else f'search_result{i}.jpg'
+            image.save(filename)
 
 if __name__ == "__main__":
     save_images_from_product('16304_2_2024_V_0_1')
