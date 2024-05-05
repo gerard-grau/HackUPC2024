@@ -28,15 +28,15 @@ Embedder is a really useful tool to understand the context of the image. It is a
 
 It goes without saying that segmantic segmentation is key to detect pixels that belong to the same object. There are many applications such as autonomous driving and in our case, this is crucial to detect different clothes in the same image. 
 
-![Alt Text](/other/semantic_sgm.gif)
+![Alt Text](./other/semantic_sgm.gif)
 
 More specifically we have used a pre-trained U-NET model. In general, U-NET is a convolutional neural network architecture that is widely used for image segmentation tasks. It consists of an encoder-decoder structure with skip connections that help preserve spatial information and improve segmentation accuracy by minimizing cross-entropy loss function. For further information click [here](https://github.com/levindabhi/cloth-segmentation) where the authors explain the architecture in detail. Besides, we have also attached a picture of the architecture below.
 
-![Alt Text](/other/unet.png) 
+![Alt Text](./other/unet.png) 
 
 As a result of this implementation, we are able to detect different clothes in the same image and segment them with success. A picture is also provided below as an example of the semantic segmentation.
 
-![Alt Text](/other/segclothes.jpeg)
+![Alt Text](./other/segclothes.jpeg)
 
 ## Results 
 
