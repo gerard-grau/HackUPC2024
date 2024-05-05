@@ -4,10 +4,10 @@ from tqdm import tqdm
 
 
 # Specify the directory containing the paths
-directory = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/images_2'
+directory = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/images_resized_30k'
 
 # Open a new CSV file to write the data
-csv_file_path = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/index/images_2 .csv'
+csv_file_path = '/home/guimcc/OneDrive/General/Projectes/HackUPC2024/index/images_resized_30k.csv'
 with open(csv_file_path, mode='w', newline='') as file:
     writer = csv.writer(file)
     # Write the header
